@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Influencer Matching</title>
+</head>
+<body>
+    <h1>Find the Right Influencer</h1>
+    <form action="/recommend" method="post">
+        <label for="followers">Followers:</label>
+        <input type="number" id="followers" name="followers"><br><br>
+
+        <label for="engagement_rate">Engagement Rate:</label>
+        <input type="number" step="0.1" id="engagement_rate" name="engagement_rate"><br><br>
+
+        <label for="campaign_roi">Campaign ROI:</label>
+        <input type="number" step="0.1" id="campaign_roi" name="campaign_roi"><br><br>
+
+        <label for="ad_cost">Ad Cost (USD):</label>
+        <input type="number" id="ad_cost" name="ad_cost"><br><br>
+
+        <label for="platform">Platform:</label>
+        <select id="platform" name="platform">
+            {% for platform in platforms %}
+            <option value="{{ platform }}">{{ platform }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="location">Location:</label>
+        <select id="location" name="location">
+            {% for location in locations %}
+            <option value="{{ location }}">{{ location }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="industry">Industry:</label>
+        <select id="industry" name="industry">
+            {% for industry in industries %}
+            <option value="{{ industry }}">{{ industry }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <input type="submit" value="Get Recommendations">
+    </form>
+</body>
+</html>

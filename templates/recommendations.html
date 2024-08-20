@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommended Influencers</title>
+</head>
+<body>
+    <h1>Recommended Influencers</h1>
+    <table border="1">
+        <tr>
+            <th>Username</th>
+            <th>Platform</th>
+            <th>Followers</th>
+            <th>Engagement Rate</th>
+            <th>Location</th>
+            <th>Industry</th>
+            <th>Campaign ROI</th>
+            <th>Ad Cost (USD)</th>
+        </tr>
+        {% for rec in recommendations %}
+        <tr>
+            <td>{{ rec['Username'] }}</td>
+            <td>{{ rec['Platform'] }}</td>
+            <td>{{ rec['Followers'] }}</td>
+            <td>{{ rec['Engagement Rate'] }}</td>
+            <td>{{ rec['Location'] }}</td>
+            <td>{{ rec['Industry'] }}</td>
+            <td>{{ rec['Campaign ROI'] }}</td>
+            <td>{{ rec['Ad Cost (USD)'] }}</td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="8">No recommendations found based on the provided criteria.</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Go Back</a>
+</body>
+</html>
