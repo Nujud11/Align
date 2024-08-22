@@ -1,38 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Recommended Influencers</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influencer Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007BFF;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+        a.button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Recommended Influencers</h1>
-    <table border="1">
-        <tr>
-            <th>Username</th>
-            <th>Platform</th>
-            <th>Followers</th>
-            <th>Engagement Rate</th>
-            <th>Location</th>
-            <th>Industry</th>
-            <th>Campaign ROI</th>
-            <th>Ad Cost (USD)</th>
-        </tr>
-        {% for rec in recommendations %}
-        <tr>
-            <td>{{ rec['Username'] }}</td>
-            <td>{{ rec['Platform'] }}</td>
-            <td>{{ rec['Followers'] }}</td>
-            <td>{{ rec['Engagement Rate'] }}</td>
-            <td>{{ rec['Location'] }}</td>
-            <td>{{ rec['Industry'] }}</td>
-            <td>{{ rec['Campaign ROI'] }}</td>
-            <td>{{ rec['Ad Cost (USD)'] }}</td>
-        </tr>
-        {% else %}
-        <tr>
-            <td colspan="8">No recommendations found based on the provided criteria.</td>
-        </tr>
-        {% endfor %}
+    <h1>Influencer Recommendations</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Platform</th>
+                <th>Followers</th>
+                <th>Engagement Rate</th>
+                <th>Location</th>
+                <th>Industry</th>
+                <th>Campaign ROI</th>
+                <th>Ad Cost (USD)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rec in recommendations %}
+            <tr>
+                <td>{{ rec['Username'] }}</td>
+                <td>{{ rec['Platform'] }}</td>
+                <td>{{ rec['Followers'] }}</td>
+                <td>{{ rec['Engagement Rate'] }}</td>
+                <td>{{ rec['Location'] }}</td>
+                <td>{{ rec['Industry'] }}</td>
+                <td>{{ rec['Campaign ROI'] }}</td>
+                <td>{{ rec['Ad Cost (USD)'] }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="8">No recommendations found based on the provided criteria.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
-    <a href="/">Go Back</a>
+    <div style="text-align: center;">
+        <a href="{{ url_for('index') }}" class="button">Back to Home</a>
+    </div>
 </body>
 </html>
