@@ -1,103 +1,433 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Influencer Matching</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- awesone fonts css-->
+    <link href="static/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <!-- owl carousel css-->
+    <link rel="stylesheet" href="static/owl-carousel/assets/owl.carousel.min.css" type="text/css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>Align</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-            text-align: center;
-        }
-        h1 {
-            color: #333;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-        }
-        label {
-            display: block;
-            text-align: left;
-            margin-bottom: 8px;
-            color: #555;
-        }
-        input[type="number"],
-        select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 1.2em;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
+
     </style>
 </head>
 <body>
-    <h1>Find the Right Influencer</h1>
-    <form action="/recommend" method="post">
-        <label for="followers">Followers:</label>
-        <input type="number" id="followers" name="followers" required><br>
+<nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent" id="gtco-main-nav">
+    <div class="container"><a class="navbar-brand"> <img src="static/images/AlignLogo-img.png" width="90" height="90" alt="Logo"> </a>
+        <button class="navbar-toggler" data-target="#my-nav" onclick="myFunction(this)" data-toggle="collapse"><span
+                class="bar1"></span> <span class="bar2"></span> <span class="bar3"></span></button>
+        <div id="my-nav" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">Sarvices</a></li>
+                <li class="nav-item"><a class="nav-link" href="#news">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+            
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <a href="{{ url_for('login_page') }}" href="#" class="btn btn-outline-dark my-2 my-sm-0 mr-3 text-uppercase">LogIn</a> <a href="#"
+                   class="btn btn-info my-2 my-sm-0 text-uppercase">SignUp</a>
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid gtco-banner-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1> ALIGN  </h1>
+                <p>  We put the future of influencer marketing in your hands by reveling your brand with AI-Powered Influencer Alignment!</p>
+                <a href="{{ url_for('mvp_page') }}"> Start Our Demo <i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
+            <div class="col-md-6">
+                <div class="card"><img class="card-img-top img-fluid" src="static/images/AlignLogo-img.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid gtco-feature" id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="cover">
+                    <div class="card">
+                        <svg
+                                class="back-bg"
+                                width="100%" viewBox="0 0 900 700" style="position:absolute; z-index: -1">
+                            <defs>
+                                <linearGradient id="PSgrad_01" x1="64.279%" x2="0%" y1="76.604%" y2="0%">
+                                    <stop offset="0%" stop-color="rgb(1,230,248)" stop-opacity="1"/>
+                                    <stop offset="100%" stop-color="rgb(29,62,222)" stop-opacity="1"/>
+                                </linearGradient>
+                            </defs>
+                            <path fill-rule="evenodd" opacity="0.102" fill="url(#PSgrad_01)"
+                                  d="M616.656,2.494 L89.351,98.948 C19.867,111.658 -16.508,176.639 7.408,240.130 L122.755,546.348 C141.761,596.806 203.597,623.407 259.843,609.597 L697.535,502.126 C748.221,489.680 783.967,441.432 777.751,392.742 L739.837,95.775 C732.096,35.145 677.715,-8.675 616.656,2.494 Z"/>
+                        </svg>
+                        <!-- *************-->
 
-        <label for="engagement_rate">Engagement Rate (%):</label>
-        <input type="number" step="0.1" id="engagement_rate" name="engagement_rate" required><br>
+                        <svg width="100%" viewBox="0 0 700 500">
+                            <clipPath id="clip-path">
+                                <path d="M89.479,0.180 L512.635,25.932 C568.395,29.326 603.115,76.927 590.357,129.078 L528.827,380.603 C518.688,422.048 472.661,448.814 427.190,443.300 L73.350,400.391 C32.374,395.422 -0.267,360.907 -0.002,322.064 L1.609,85.154 C1.938,36.786 40.481,-2.801 89.479,0.180 Z"></path>
+                            </clipPath>
+                            <!-- xlink:href for modern browsers, src for IE8- -->
+                            <image clip-path="url(#clip-path)" xlink:href="static/images/About.png" width="100%"
+                                   height="465" class="svg__image"></image>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <h2>Align streamline Influencer Marketing with a Powerful Data-Driven Platform</h2>
+                <p>By uses AI to analyze data and deliver precise influencer recommendations suitable for you</p>
+                <p> To reaching the audience that genuinely cares about your products, ensuring your marketing efforts are impactful and efficient.</p>
+                <a href="#"> Read More <i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid gtco-features" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <h2> About Our Services <br/> </h2>
+                <p>Align serves companies, brands, startups and influencers. Both parties benefit from our platform.</p>
+                <a href="#"> All services <i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
+            <div class="col-lg-8">
+                <svg id="bg-services"
+                     width="100%"
+                     viewBox="0 0 1000 800">
+                    <defs>
+                        <linearGradient id="PSgrad_02" x1="64.279%" x2="0%" y1="76.604%" y2="0%">
+                            <stop offset="0%" stop-color="rgb(1,230,248)" stop-opacity="1"/>
+                            <stop offset="100%" stop-color="rgb(29,62,222)" stop-opacity="1"/>
+                        </linearGradient>
+                    </defs>
+                    <path fill-rule="evenodd" opacity="0.102" fill="url(#PSgrad_02)"
+                          d="M801.878,3.146 L116.381,128.537 C26.052,145.060 -21.235,229.535 9.856,312.073 L159.806,710.157 C184.515,775.753 264.901,810.334 338.020,792.380 L907.021,652.668 C972.912,636.489 1019.383,573.766 1011.301,510.470 L962.013,124.412 C951.950,45.594 881.254,-11.373 801.878,3.146 Z"/>
+                </svg>
+                <div class="row">
+                    <div class="col">
+                        <div class="card text-center">
+                            <div class="oval"><img class="card-img-top" src="static/images/web-design.png" alt=""></div>
+                            <div class="card-body">
+                                <h3 class="card-title">Best Influencer Recommendations</h3>
+                                <p class="card-text">Using artificial intelligence techniques, your process of choosing an influencer who align perfectly with your brand’s values and target audience is very easy and simple.</p>
+                            </div>
+                        </div>
+                        <div class="card text-center">
+                            <div class="oval"><img class="card-img-top" src="static/images/marketing.png" alt=""></div>
+                            <div class="card-body">
+                                <h3 class="card-title"> Data-Driven Insights</h3>
+                                <p class="card-text">Make informed decisions with our analytics dashboard, offering real-time insights into influencer performance and audience engagement. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <div class="oval"><img class="card-img-top" src="static/images/seo.png" alt=""></div>
+                            <div class="card-body">
+                                <h3 class="card-title">Flexible and Scalable Solutions </h3>
+                                <p class="card-text"> Whether you're a small business or a large enterprise, our platform adapts to your needs, allowing you to scale your influencer marketing efforts effortlessly.</p>
+                            </div>
+                        </div>
+                        <div class="card text-center">
+                            <div class="oval"><img class="card-img-top" src="static/images/graphics-design.png" alt=""></div>
+                            <div class="card-body">
+                                <h3 class="card-title"> Save your Time and Effort</h3>
+                                <p class="card-text"> Traditional methods can be time-consuming and costly, often leading to mismatched partnerships. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid gtco-numbers-block">
+    <div class="container">
+        <svg width="100%" viewBox="0 0 1600 400">
+            <defs>
+                <linearGradient id="PSgrad_03" x1="80.279%" x2="0%"  y2="0%">
+                    <stop offset="0%" stop-color="#8C52FF" stop-opacity="1" /> <!-- من هنا غيرت لون المستطيل اللي فيه الارقام  -->
+                    <stop offset="100%" stop-color="#2612B7" stop-opacity="1" /> <!-- ومن هنا بعد-->
 
-        <label for="campaign_roi">Campaign ROI (%):</label>
-        <input type="number" step="0.1" id="campaign_roi" name="campaign_roi" required><br>
+                </linearGradient>
 
-        <label for="ad_cost">Ad Cost (USD):</label>
-        <input type="number" id="ad_cost" name="ad_cost" required><br>
+            </defs>
+            <!-- <clipPath id="clip-path3">
 
-        <label for="platform">Platform:</label>
-        <select id="platform" name="platform" required>
-            {% for platform in platforms %}
-            <option value="{{ platform }}">{{ platform }}</option>
-            {% endfor %}
-        </select><br>
+                                      </clipPath> -->
 
-        <label for="location">Location:</label>
-        <select id="location" name="location" required>
-            {% for location in locations %}
-            <option value="{{ location }}">{{ location }}</option>
-            {% endfor %}
-        </select><br>
+            <path fill-rule="evenodd"  fill="url(#PSgrad_03)"
+                  d="M98.891,386.002 L1527.942,380.805 C1581.806,380.610 1599.093,335.367 1570.005,284.353 L1480.254,126.948 C1458.704,89.153 1408.314,59.820 1366.025,57.550 L298.504,0.261 C238.784,-2.944 166.619,25.419 138.312,70.265 L16.944,262.546 C-24.214,327.750 12.103,386.317 98.891,386.002 Z"></path>
 
-        <label for="industry">Industry:</label>
-        <select id="industry" name="industry" required>
-            {% for industry in industries %}
-            <option value="{{ industry }}">{{ industry }}</option>
-            {% endfor %}
-        </select><br>
+            <clipPath id="ctm" fill="none">
+                <path
+                        d="M98.891,386.002 L1527.942,380.805 C1581.806,380.610 1599.093,335.367 1570.005,284.353 L1480.254,126.948 C1458.704,89.153 1408.314,59.820 1366.025,57.550 L298.504,0.261 C238.784,-2.944 166.619,25.419 138.312,70.265 L16.944,262.546 C-24.214,327.750 12.103,386.317 98.891,386.002 Z"></path>
+            </clipPath>
 
-        <input type="submit" value="Get Recommendations">
-    </form>
+            <!-- xlink:href for modern browsers, src for IE8- -->
+            <image  clip-path="url(#ctm)" xlink:href="static/images/word-map.png" height="800px" width="100%" class="svg__image">
+
+            </image>
+
+        </svg>
+        <div class="row">
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"> 4000 </h5>
+                        <p class="card-text"> Influencers form
+Middle East </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"> 23% </h5>
+                        <p class="card-text"> Sales improved</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"> 150% </h5>
+                        <p class="card-text"> Boosted
+Engagement</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"> </h5>
+                        <p class="card-text"> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid gtco-testimonials">
+    <div class="container">
+        <h2> Look at What Align Users Are Saying </h2>
+        <div class="owl-carousel owl-carousel1 owl-theme">
+            <div>
+                <div class="card text-center"><img class="card-img-top" src="static/images/temp.png"  alt="">
+                    <div class="card-body">
+                        <h5> Name of company <br/>
+                            <span> The review  </span></h5>
+                        
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="card text-center"><img class="card-img-top" src="static/images/temp.png" alt="">
+                    <div class="card-body">
+                        <h5>  Name of company  <br/>
+                            <span> The review  </span></h5>
+                        
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="card text-center"><img class="card-img-top" src="static/images/temp.png" alt="">
+                    <div class="card-body">
+                        <h5>  Name of company  <br/>
+                            <span> The review  </span></h5>
+                       
+                    </div>
+                </div>
+            </div>
+           
+            <div>
+                <div class="card text-center"><img class="card-img-top" src="static/images/temp.png" alt="">
+                    <div class="card-body">
+                        <h5> Name of company  <br/>
+                            <span> The review </span></h5>
+                        
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid gtco-features-list">
+    <div class="container">
+        <div class="row">
+            <div class="media col-md-6 col-lg-4">
+                <div class="oval mr-4"><img class="align-self-start" src="static/images/quality-results.png" alt=""></div>
+                <div class="media-body">
+                    <h5 class="mb-0"> Effective advertising</h5>
+                    
+                </div>
+            </div>
+            <div class="media col-md-6 col-lg-4">
+                <div class="oval mr-4"><img class="align-self-start" src="static/images/analytics.png" alt=""></div>
+                <div class="media-body">
+                    <h5 class="mb-0"> Data analysis</h5>
+                    
+                </div>
+            </div>
+            <div class="media col-md-6 col-lg-4">
+                <div class="oval mr-4"><img class="align-self-start" src="static/images/affordable-pricing.png" alt=""></div>
+                <div class="media-body">
+                    <h5 class="mb-0"> Reasonable interest rate</h5>
+                    
+                </div>
+            </div>
+            <div class="media col-md-6 col-lg-4">
+                <div class="oval mr-4"><img class="align-self-start" src="static/images/easy-to-use.png" alt=""></div>
+                <div class="media-body">
+                    <h5 class="mb-0">AI-Powered platform</h5>
+                    
+                </div>
+            </div>
+            <div class="media col-md-6 col-lg-4">
+                <div class="oval mr-4"><img class="align-self-start" src="static/images/free-support.png" alt=""></div>
+                <div class="media-body">
+                    <h5 class="mb-0"> Customer service</h5>
+                   
+                </div>
+            </div>
+            <div class="media col-md-6 col-lg-4">
+                <div class="oval mr-4"><img class="align-self-start" src="static/images/effectively-increase.png" alt=""></div>
+                <div class="media-body">
+                    <h5 class="mb-0"> Increased advertising efficiency</h5>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid gtco-logo-area">
+    <div class="container">
+        <!-- <div class="row">
+            <div class="col"><img src="images/logo1.png" class="img-fluid" alt=""></div>
+            <div class="col"><img src="images/logo2.png" class="img-fluid" alt=""></div>
+            <div class="col"><img src="images/logo3.png" class="img-fluid" alt=""></div>
+            <div class="col"><img src="images/logo4.png" class="img-fluid" alt=""></div>
+            <div class="col"><img src="images/logo5.png" class="img-fluid" alt=""></div>
+        </div> -->
+    </div>
+</div>
+<div class="container-fluid gtco-news" id="news">
+    <div class="container">
+        <h2> Choose Your Plan </h2>
+        <div class="owl-carousel owl-carousel2 owl-theme">
+            <div>
+                <div class="card text-center"><img class="card-img-top" src="static/images/Basic.png" alt="">
+                    <div class="card-body text-left pr-0 pl-0">
+                        <h5> $158 </h5>
+                        <p class="card-text">  <h6> billed yearly -
+Save $480
+/month </h6> <br> Essential search engine and influencer management. </p> 
+                        <a href="#"> More Details <i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
+                </div>
+            </div>
+            <div>
+                <div class="card text-center"><img class="card-img-top" src="static/images/Professional.png" alt="">
+                    <div class="card-body text-left pr-0 pl-0">
+                        <h5> $318  </h5>
+                        <p class="card-text"> <h6> billed yearly -
+Save $960 
+/month </h6> <br> Elevate your experience with campaign management and reports.</p> 
+                        <a href="#">More Details<i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
+                </div>
+            </div>
+            <div>
+                <div class="card text-center"><img class="card-img-top" src="static/images/Business.png" alt="">
+                    <div class="card-body text-left pr-0 pl-0">
+                        <h5>$798</h5>
+                        <p class="card-text"> <h6>billed yearly -
+Save $2,400
+/month</h6> <br> The all inclusive solution designed to meet higher requirements. </p> 
+                        <a href="#">More Details<i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
+                </div>
+            </div>
+            <div>
+                <div class="card text-center"><img class="card-img-top" src="static/images/Enterprise.png" alt="">
+                    <div class="card-body text-left pr-0 pl-0">
+                        <h5>Custom</h5>
+                        <p class="card-text"> <h6>  </h6> <br> Add the tools that your growing business needs.</p> 
+                        <a href="#">More Details<i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
+                </div>
+            </div>
+
+        
+        </div>
+    </div>
+</div>
+<footer class="container-fluid" id="gtco-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6" id="contact">
+                <h4>We’d Love to Hear from You!</h4>
+                <input type="text" class="form-control" placeholder="Full Name">
+                <input type="email" class="form-control" placeholder="Email Address">
+                <textarea class="form-control" placeholder="Message"></textarea>
+                <a href="#" class="submit-button"> Send <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-6">
+                        <h4> Main List </h4>
+                        <ul class="nav flex-column company-nav">
+                            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Sarvices</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                        </ul>
+                        <h4 class="mt-5">Follow us</h4>
+                        <ul class="nav follow-us-nav">
+                            <li class="nav-item"><a class="nav-link pl-0" href="#"><i class="fa fa-facebook"
+                                                                                      aria-hidden="true"></i></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-twitter"
+                                                                                 aria-hidden="true"></i></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-google"
+                                                                                 aria-hidden="true"></i></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-linkedin"
+                                                                                 aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                 <!--   <div class="col-6">
+                        <h4>Services</h4>
+                        <ul class="nav flex-column services-nav">
+                            <li class="nav-item"><a class="nav-link" href="#">Web Design</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Graphics Design</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">App Design</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">SEO</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Marketing</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Analytic</a></li>
+                        </ul>
+                    </div> -->
+                    <div class="col-12">
+                        <p>&copy; 2024. Align Team from <a href="https://wetaan.com" target="_blank"> Wetaan - Afaq program</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="static/js/jquery-3.3.1.slim.min.js"></script>
+<script src="static/js/popper.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<!-- owl carousel js-->
+<script src="static/owl-carousel/owl.carousel.min.js"></script>
+<script src="static/js/main.js"></script>
 </body>
 </html>
-

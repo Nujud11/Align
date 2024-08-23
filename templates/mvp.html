@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influencer Matching</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Background color set to black */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            color: #fff; /* Set text color to white */
+        }
+        h1 {
+            color: #fff; /* Find the Right Influencer text color set to white */
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            /* Button gradient background */
+            background-image: -moz-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
+            background-image: -webkit-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
+            background-image: -ms-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            /* Back button gradient background */
+            background-image: -moz-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
+            background-image: -webkit-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
+            background-image: -ms-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Find the Right Influencer</h1>
+    <form action="/recommend" method="post">
+        <label for="followers">Followers:</label>
+        <input type="number" id="followers" name="followers" required><br>
+
+        <label for="engagement_rate">Engagement Rate (%):</label>
+        <input type="number" step="0.1" id="engagement_rate" name="engagement_rate" required><br>
+
+        <label for="campaign_roi">Campaign ROI (%):</label>
+        <input type="number" step="0.1" id="campaign_roi" name="campaign_roi" required><br>
+
+        <label for="ad_cost">Ad Cost (USD):</label>
+        <input type="number" id="ad_cost" name="ad_cost" required><br>
+
+        <label for="platform">Platform:</label>
+        <select id="platform" name="platform" required>
+            {% for platform in platforms %}
+            <option value="{{ platform }}">{{ platform }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="location">Location:</label>
+        <select id="location" name="location" required>
+            {% for location in locations %}
+            <option value="{{ location }}">{{ location }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="industry">Industry:</label>
+        <select id="industry" name="industry" required>
+            {% for industry in industries %}
+            <option value="{{ industry }}">{{ industry }}</option>
+            {% endfor %}
+        </select><br>
+
+        <input type="submit" value="Get Recommendations">
+    </form>
+    <a href="{{ url_for('landing_page') }}" class="back-button">Go Back</a> <!-- Go Back button -->
+</body>
+</html>

@@ -9,12 +9,13 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #000; /* Background color set to black */
+            color: #fff; /* Default text color set to white */
             margin: 20px;
         }
         h1 {
             text-align: center;
-            color: #333;
+            color: #fff; /* Heading color set to white */
             margin-bottom: 20px;
         }
         table {
@@ -30,27 +31,33 @@
             text-align: left;
         }
         th {
-            background-color: #007BFF;
+            /* First row (header) background gradient */
+            background-image: -moz-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
+            background-image: -webkit-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
+            background-image: -ms-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
             color: white;
         }
         tr:nth-child(even) {
-            background-color: #f9f9f9;
+            background-color: #333; /* Alternating row color in dark gray */
         }
         tr:hover {
-            background-color: #f1f1f1;
+            background-color: #444; /* Hover color in lighter gray */
         }
-        a.button {
+         a.button, .back-button {
             display: inline-block;
             padding: 10px 20px;
             font-size: 1em;
             color: #fff;
-            background-color: #007BFF;
+            /* Button gradient background */
+            background-image: -moz-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
+            background-image: -webkit-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
+            background-image: -ms-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
             border-radius: 5px;
             text-decoration: none;
             margin-top: 20px;
             text-align: center;
         }
-        a.button:hover {
+        a.button:hover, .back-button:hover {
             background-color: #0056b3;
         }
     </style>
@@ -90,7 +97,8 @@
         </tbody>
     </table>
     <div style="text-align: center;">
-        <a href="{{ url_for('index') }}" class="button">Back to Home</a>
+        <a href="{{ url_for('landing_page') }}" class="button">Back to Home</a>
+       <!--  <a href="javascript:history.back()" class="back-button">Go Back</a>  -->
     </div>
 </body>
 </html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;600&family=Noto+Kufi+Arabic:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/signIn.css">
+
+    <title>Login</title>
+
+
+
+<body dir="rtl">
+
+
+    <div class="container">
+        <h1 class="title">!Welcome</h1>
+        <div class="form">
+        <form action="php/signin.php" method="post">
+            <label for="email" class="name"> Email </label>
+            <input type="text" name="Email" id="email" placeholder="....@gmail.com" class="in">
+            
+            <br><br><br>
+            <label for="Password" class="name"> Password </label>
+            <input type="Password" name="Password" id="Password" placeholder="*******" class="in">
+            
+            <br><br><br>
+            <input type="submit" value="Login" class="submit" >
+            <a class="signin" href="{{ url_for('landing_page') }}}" > You don't have an account?  .... Join us! </a>
+            <br>
+            <br>
+            <br>
+            <a class="signin" href="{{ url_for('landing_page') }}" > Back to home page </a><br>
+           
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+</body>
+
+</html>
