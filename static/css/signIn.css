@@ -1,108 +1,110 @@
-body {
-    
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    height: 100vh;
-    padding: 0;
-    background-image: url(..\\images/122.jpg);
-    background-size: cover;
-    background-position: center;
-    font-family: 'Cairo', sans-serif;
-background-repeat: no-repeat;
-text-align: center;
-background: black;
+ body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        background-image: url(../images/122.jpg);
+        background-size: cover;
+        background-position: center;
+        font-family: 'Cairo', sans-serif;
+        background-repeat: no-repeat;
+        text-align: center;
+        background: black;
+    }
 
-}
-::selection {
-    background-color: white;
-    color: white;
-}
-.form{
-    position: absolute;
-    top: 80px;
-    right:100px;
-    zoom: normal;
-    font-family: 'Times New Roman', sans-serif;
+    .container {
+        background-image: linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
+        width: 90%;
+        max-width: 800px;
+        height: auto;
+        margin: auto;
+        padding: 20px;
+        border-radius: 20px;
+        box-sizing: border-box;
+        text-align: center;
+    }
 
-}
-.in{
-    background-color: rgba(255, 255, 255, 0.3);
-    position:absolute;
-    right:0px;
-    width:600px;
-    height: 40px;
-    border-radius: 60px;
-    border: 0;
-    padding: 20px;
-    box-sizing: border-box;
-    margin-top: 40px;
-    
-}
-.container{
- background-image: -moz-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%); /* الثلاث سطور هذي تغير لون الازرار اللي تحت كل باراقراف*/
-  background-image: -webkit-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
-  background-image: -ms-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
- width:800px;
- height: 500px;
- margin:auto;
- size: 100%;
- position: relative;
- top:25px;
- border-radius: 20px;
- box-sizing: border-box;
- text-align: center;
-}
-.name{
-    font-weight: 600;
-    color: white;
-    font-family: 'Times New Roman', sans-serif;
-    float: left;
-    margin-left: -250px;
-    margin-top: 48px;
-    font-size: 20px
-    
-   
-    
-}
-.submit{
-    background: black;
-    color: white;
-    border-radius: 100px;
-    border: 0;
-    box-sizing: border-box;
-    cursor: pointer;
-    font-size: 15px;
-    height: 50px;
-    text-align: center;
-    position: absolute;
-    right:-10px;
-    left:20px;
-    width:600px;
-    font-family: 'Times New Roman', sans-serif;
-    top: 170px;
-    
-}
-.submit:active {
-background-color: white;
-}
-.title{
-text-align:center ;
-font-family: 'Times New Roman', sans-serif;
-font-size: 40px;
-color: white;
-}
+    .form {
+        position: relative;
+        top: 20px;
+        margin: 0 auto;
+    }
 
-.signin{
-text-decoration: none;
-position: relative;
-color:white;
-top:130px;
-left:-160px;
-    
+    .in {
+        background-color: rgba(255, 255, 255, 0.6);
+        width: 100%;
+        max-width: 600px;
+        height: 40px;
+        border-radius: 60px;
+        border: 0;
+        padding: 10px 20px;
+        margin-top: 20px;
+        box-sizing: border-box;
+    }
 
+    .name {
+        font-weight: 600;
+        color: white;
+        font-family: 'Times New Roman', sans-serif;
+        font-size: 20px;
+        text-align: left;
+        display: block;
+        margin-bottom: 10px;
+    }
 
-}
+    .submit {
+        background: black;
+        color: white;
+        border-radius: 100px;
+        border: 0;
+        cursor: pointer;
+        font-size: 20px;
+        height: 50px;
+        text-align: center;
+        width: 100%;
+        max-width: 600px;
+        font-family: 'Times New Roman', sans-serif;
+        margin: 20px auto;
+        display: block;
+    }
 
-.signin:active{
-color:white;
+    .signin {
+        text-decoration: none;
+        color: white;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .title {
+        text-align: center;
+        font-family: 'Times New Roman', sans-serif;
+        font-size: 40px;
+        color: white;
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .name {
+            margin-left: 0;
+            font-size: 18px;
+        }
+
+        .in, .submit {
+            width: 90%;
+            max-width: none;
+        }
+
+        .signin {
+            left: 0;
+            text-align: center;
+        }
+    }
+     

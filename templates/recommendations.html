@@ -1,22 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Influencer Recommendations</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Recommended Influencers</title>
+    <!-- Include Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lobster&display=swap">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #000; /* Background color set to black */
-            color: #fff; /* Default text color set to white */
+            background-color: #000000;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
             margin: 20px;
         }
+        
         h1 {
             text-align: center;
             color: #fff; /* Heading color set to white */
             margin-bottom: 20px;
+        }
+
+        .info-box {
+            border: 1px solid #e0cfe7;
+            background-color: #f3e8f8;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            color: #000000;
+        }
+        .info-box h4, .info-box h5 {
+            margin-top: 0;
+            font-family: 'Lobster', cursive;
+            color: #5a189a;
+        }
+        .info-box p, .info-box ul {
+            font-family: 'Roboto', sans-serif;
         }
         table {
             width: 100%;
@@ -26,24 +42,31 @@
         table, th, td {
             border: 1px solid #ddd;
         }
-        th, td {
-            padding: 12px;
-            text-align: left;
-        }
+        
         th {
-            /* First row (header) background gradient */
+            padding: 10px;
+            text-align: left;
             background-image: -moz-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
             background-image: -webkit-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
             background-image: -ms-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
             color: white;
+            text-transform: uppercase;
         }
+        
+        td {
+            padding: 10px;
+            text-align: left;      
+        }
+        
         tr:nth-child(even) {
             background-color: #333; /* Alternating row color in dark gray */
         }
+        
         tr:hover {
             background-color: #444; /* Hover color in lighter gray */
         }
-         a.button, .back-button {
+        
+        a {
             display: inline-block;
             padding: 10px 20px;
             font-size: 1em;
@@ -57,8 +80,16 @@
             margin-top: 20px;
             text-align: center;
         }
-        a.button:hover, .back-button:hover {
-            background-color: #0056b3;
+        
+        a:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .footer {
+            margin-top: 50px;
+            font-size: 12px;
+            color: #ffffff;
+            text-align: center;
         }
     </style>
 </head>
@@ -74,7 +105,7 @@
                 <th>Location</th>
                 <th>Industry</th>
                 <th>Campaign ROI</th>
-                <th>Ad Cost (USD)</th>
+                <th>Ad Cost (SAR)</th>
             </tr>
         </thead>
         <tbody>
@@ -89,16 +120,43 @@
                 <td>{{ rec['Campaign ROI'] }}</td>
                 <td>{{ rec['Ad Cost (USD)'] }}</td>
             </tr>
-            {% else %}
-            <tr>
-                <td colspan="8">No recommendations found based on the provided criteria.</td>
-            </tr>
-            {% endfor %}
+       
+        {% else %}
+        <tr>
+            <td colspan="8">No recommendations found based on the provided criteria.</td>
+        </tr>
+        {% endfor %}
         </tbody>
     </table>
-    <div style="text-align: center;">
-        <a href="{{ url_for('landing_page') }}" class="button">Back to Home</a>
-       <!--  <a href="javascript:history.back()" class="back-button">Go Back</a>  -->
+
+    <a href="{{ url_for('landing_page') }}">Back to Home</a>
+
+    <!-- ROI and Engagement Rate Information Section -->
+    <div class="info-box" style="line-height: 1.8; margin-bottom: 20px;">
+        <h4 style="font-size: 24px; margin-bottom: 20px;">Understanding ROI and Engagement Rate</h4>
+        <p><strong>Engagement Rate:</strong> Engagement Rate is the percentage of an influencer's audience that interacts with their content. A higher engagement rate typically indicates a more active and engaged audience.Engagement Rates can reach up to 10—WOW!</p>
+        <ul>
+            <li>1%-3%: Normal</li>
+            <li>3%-6%: Good</li>
+            <li>6%-10%: Excellent</li>
+        </ul>
+
+        <p style="line-height: 1.6; margin-bottom: 15px;"><strong>ROI (Return on Investment):</strong> ROI measures the profitability of a campaign relative to its cost. It is calculated as the ratio of net profit to the cost of the campaign. ROI values start from 10, which is already good, and can go up to 29, indicating exceptionally profitable campaigns.</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+            <li>10-15: Good – The campaign is profitable, making 10 to 15 times the cost in profit. This shows the campaign is performing well.</li>
+            <li>15-20: Very Good – The campaign is doing even better, making 15 to 20 times its cost in profit. This level of ROI indicates strong performance.</li>
+            <li>Above 20: Excellent – The campaign is highly successful, making more than 20 times its cost in profit. The higher the number, the better it is, with values up to 29 being outstanding.</li>
+        </ul>
+        
+
+
+        <h5 style="font-size: 24px; margin-top: 30px; margin-bottom: 20px;" >Best Practices</h5>
+        <p>When choosing an influencer, consider both their Engagement Rate and ROI. A higher engagement rate often leads to better audience interaction, but ROI is crucial to ensure your marketing efforts are profitable. Aim for influencers who strike a good balance between these metrics to achieve your campaign goals.</p>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        &copy; 2024. Align Team from Wetaan - Afaq program.
     </div>
 </body>
 </html>

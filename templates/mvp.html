@@ -1,120 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Influencer Matching</title>
+    <!-- Include Bootstrap CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #000; /* Background color set to black */
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-            text-align: center;
-            color: #fff; /* Set text color to white */
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            
         }
-        h1 {
-            color: #fff; /* Find the Right Influencer text color set to white */
-            font-size: 2.5em;
-            margin-bottom: 20px;
+        .highlight-border {
+            border: 2px solid red;
         }
-        form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
+        label, select, input {
+            color: #ffffff;
         }
-        label {
-            display: block;
-            text-align: left;
-            margin-bottom: 8px;
-            color: #555;
+        .form-label {
+            color: #ffffff;
         }
-        input[type="number"],
-        select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+        .form-control, .form-select {
+            background-color: #333333;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .form-control::placeholder {
+            color: #bbbbbb;
         }
         input[type="submit"] {
-            width: 100%;
-            padding: 10px;
             /* Button gradient background */
             background-image: -moz-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
             background-image: -webkit-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
             background-image: -ms-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
-            color: white;
+            color: #ffffff;
             border: none;
-            border-radius: 4px;
-            font-size: 1.2em;
+            padding: 10px 20px;
+            border-radius: 5px;
             cursor: pointer;
         }
         input[type="submit"]:hover {
-            background-color: #0056b3;
+            background-color: #ffffff;
+            color: #000000;
         }
-        .back-button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 1em;
-            color: #fff;
-            /* Back button gradient background */
-            background-image: -moz-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
-            background-image: -webkit-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
-            background-image: -ms-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 20px;
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+        h1 {
             text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <h1>Find the Right Influencer</h1>
-    <form action="/recommend" method="post">
-        <label for="followers">Followers:</label>
-        <input type="number" id="followers" name="followers" required><br>
+    <div class="container mt-5">
+        <h1>Find the Right Influencer</h1>
+        <form id="influencerForm" action="/recommend" method="post" onsubmit="return validateForm(event)">
+            <div class="mb-3">
+                <label for="followers" class="form-label">Followers:</label>
+                <input type="number" class="form-control" id="followers" name="followers" placeholder="Enter number of followers" min="1000" max="1000000" title="Enter the number of followers the influencer has. Example: 50000">
+                <div class="invalid-feedback">Please enter a number of followers between 1000 and 1000000.</div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="engagement_rate" class="form-label">Engagement Rate:</label>
+                <input type="number" step="0.01" class="form-control" id="engagement_rate" name="engagement_rate" placeholder="Enter engagement rate as a percentage (e.g., 5 for 5%) up to 10" min="0" max="10" title="Engagement Rate is the percentage of the influencer's audience that interacts with their content. Guidelines: 1%-3% is considered Normal, 3%-6% is Good, 6%-10% is Excellent.it can reach up to 10!">
+                <div class="invalid-feedback">Please enter a valid engagement rate between 0 and 10.</div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="campaign_roi" class="form-label">Campaign ROI:</label>
+                <input type="number" step="0.1" class="form-control" id="campaign_roi" name="campaign_roi" placeholder="Enter Campaign ROI (number between 10 and 29)" min="10" max="29" title="ROI (Return on Investment) measures the profitability of a campaign relative to its cost. ROI values start from 10, which is already good, and can go up to 29, indicating exceptionally profitable campaigns.">
+                <div class="invalid-feedback">Please enter a valid ROI between 10 and 29.</div>
+            </div>
+            
+                                   
+            <div class="mb-3">
+                <label for="ad_cost" class="form-label">Ad Cost (SAR):</label>
+                <input type="number" class="form-control" id="ad_cost" name="ad_cost" placeholder="Enter ad cost in SAR" min="100" max="100000" title="Enter the cost of the advertisement in SAR. Example: 5000">
+                <div class="invalid-feedback">Please enter a valid ad cost between 100 and 100000 SAR.</div>
+            </div>
 
-        <label for="engagement_rate">Engagement Rate (%):</label>
-        <input type="number" step="0.1" id="engagement_rate" name="engagement_rate" required><br>
+            <div class="mb-3">
+                <label for="platform" class="form-label">Platform:</label>
+                <select class="form-select" id="platform" name="platform" required>
+                    <option value="" disabled selected>Select a platform</option>
+                    {% for platform in platforms %}
+                    <option value="{{ platform }}">{{ platform }}</option>
+                    {% endfor %}
+                </select>
+                <div class="invalid-feedback">Please select a platform.</div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="location" class="form-label">Location:</label>
+                <select class="form-select" id="location" name="location" required>
+                    <option value="" disabled selected>Select a location</option>
+                    {% for location in locations %}
+                    <option value="{{ location }}">{{ location }}</option>
+                    {% endfor %}
+                </select>
+                <div class="invalid-feedback">Please select a location.</div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="industry" class="form-label">Industry:</label>
+                <select class="form-select" id="industry" name="industry" required>
+                    <option value="" disabled selected>Select an industry</option>
+                    {% for industry in industries %}
+                    <option value="{{ industry }}">{{ industry }}</option>
+                    {% endfor %}
+                </select>
+                <div class="invalid-feedback">Please select an industry.</div>
+            </div>
+            
+            <div id="formError" class="alert alert-danger d-none"></div>
+            
+            <input type="submit" class="btn btn-primary" value="Get Recommendations">
+        </form>
+    </div>
+    <!-- Footer Section -->
 
-        <label for="campaign_roi">Campaign ROI (%):</label>
-        <input type="number" step="0.1" id="campaign_roi" name="campaign_roi" required><br>
+    <!-- Include Bootstrap JS and Popper.js for tooltips -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
-        <label for="ad_cost">Ad Cost (USD):</label>
-        <input type="number" id="ad_cost" name="ad_cost" required><br>
+    <!-- Enable Bootstrap tooltips -->
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
-        <label for="platform">Platform:</label>
-        <select id="platform" name="platform" required>
-            {% for platform in platforms %}
-            <option value="{{ platform }}">{{ platform }}</option>
-            {% endfor %}
-        </select><br>
+        function validateForm(event) {
+            let form = document.getElementById('influencerForm');
+            let formError = document.getElementById('formError');
+            let filledFields = 0;
 
-        <label for="location">Location:</label>
-        <select id="location" name="location" required>
-            {% for location in locations %}
-            <option value="{{ location }}">{{ location }}</option>
-            {% endfor %}
-        </select><br>
+            // Remove any previous highlights
+            let inputs = form.querySelectorAll('input, select');
+            inputs.forEach(input => {
+                input.classList.remove('highlight-border');
+            });
 
-        <label for="industry">Industry:</label>
-        <select id="industry" name="industry" required>
-            {% for industry in industries %}
-            <option value="{{ industry }}">{{ industry }}</option>
-            {% endfor %}
-        </select><br>
+            // Count the number of filled fields
+            inputs.forEach(input => {
+                if (input.value && input.value !== "" && input.value !== "Select a platform" && input.value !== "Select a location" && input.value !== "Select an industry") {
+                    filledFields++;
+                }
+            });
 
-        <input type="submit" value="Get Recommendations">
-    </form>
-    <a href="{{ url_for('landing_page') }}" class="back-button">Go Back</a> <!-- Go Back button -->
+            // Show error if no fields are filled
+            if (filledFields === 0) {
+                formError.textContent = "Please fill out at least one field before submitting.";
+                formError.classList.remove('d-none');
+                event.preventDefault();
+                event.stopPropagation();
+                return false;
+            }
+
+            // Show error and highlight other fields if only one field is filled
+            if (filledFields === 1) {
+                formError.textContent = "Please fill out more than one field to get accurate recommendations.";
+                formError.classList.remove('d-none');
+                
+                // Highlight other fields with a red border
+                inputs.forEach(input => {
+                    if (!input.value || input.value === "" || input.value === "Select a platform" || input.value === "Select a location" || input.value === "Select an industry") {
+                        input.classList.add('highlight-border');
+                    }
+                });
+
+                event.preventDefault();
+                event.stopPropagation();
+                return false;
+            }
+
+            // If all fields are valid
+            if (form.checkValidity() === false) {
+                form.classList.add('was-validated');
+                event.preventDefault();
+                event.stopPropagation();
+            }
+
+            return true;
+        }
+    </script>
 </body>
 </html>
