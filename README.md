@@ -24,9 +24,7 @@ The project was developed during an internship at Wetaan Company and awarded **B
 The system uses a structured influencer dataset containing attributes such as category, location, engagement indicators, and cost.
 
 ## Demo
-- Live demo was previously deployed on Heroku (free tier discontinued)
-- Screen Recocrding: https://github.com/user-attachments/assets/a665616b-5526-45ff-82a4-f4958f965670
-
+- Live demo was previously deployed on Heroku: https://align-by-wetaan-2dcd62ef9e5a.herokuapp.com 
 
 ## Run Locally
 ```bash
