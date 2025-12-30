@@ -106,8 +106,8 @@ body {
   border-radius: 20px;
   border-width: 2px;
 }
-#gtco-main-nav form a.btn-info {/*غيرت لون إنشاء الحساب*/
-   background-image: -moz-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%); /* الثلاث سطور هذي تغير لون الازرار اللي تحت كل باراقراف*/
+#gtco-main-nav form a.btn-info { 
+   background-image: -moz-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%); /* الثلاث سطور هذي  لون زر انشاء الحساب*/
   background-image: -webkit-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
   background-image: -ms-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
   border-color: white;
@@ -195,7 +195,7 @@ body {
 
 .gtco-banner-area a, .gtco-feature a, .gtco-features a, .gtco-news .owl-carousel .card a, #gtco-footer .submit-button {
 
-  background-image: -moz-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%); /* الثلاث سطور هذي تغير لون الازرار اللي تحت كل باراقراف*/
+  background-image: -moz-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%); /* الثلاث سطور هذي  لون الازرار اللي تحت كل باراقراف*/
   background-image: -webkit-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
   background-image: -ms-linear-gradient(0deg, #1A0D6C 0%, #8741F4 50%, #FF8CD1 100%);
 
@@ -210,7 +210,7 @@ body {
   text-decoration: none !important;
 }
 .gtco-banner-area a .fa, .gtco-feature a .fa, .gtco-features a .fa, .gtco-news .owl-carousel .card a .fa, #gtco-footer .submit-button .fa {
-  background: white; /* يغير لون الدائره اللي فيها مثلث صغير  بالازرار */
+  background: white; /*  لون الدائره اللي فيها مثلث صغير  بالازرار */
   border-radius: 50%;
   height: 32px;
   width: 32px;
@@ -223,7 +223,7 @@ body {
 
 .gtco-feature h2, .gtco-features h2 {
   font-family: "Lato-Regular";
-  color: white; /* يغير لون العناوين في قسم about و serveics*/
+  color: white; /*  لون العناوين في قسم about و serveics*/
   font-size: 36px;
   margin-bottom: 30px;
 }
@@ -375,7 +375,7 @@ body {
 }
 
 .gtco-features .col-lg-8 .card .oval {
-  background: linear-gradient(to right, #f1f6fd, #f0fbfe); /* يغير لون اللي ورا الايكونز في الخدمات*/
+  background: linear-gradient(to right, #f1f6fd, #f0fbfe); /*  لون اللي ورا الايكونز في الخدمات*/
   padding: 10px;
   width: 150px;
   border-radius: 50%;
@@ -662,7 +662,7 @@ body {
 }
 
 .gtco-news {
-   background: linear-gradient(135deg, #E8BBF0, #B2A5F1, #DDDAFA, #8173C5, #93D0FA);/* يغير لون الخلفيه حقت اشهر مؤثرين نسق */
+   background: linear-gradient(135deg, #E8BBF0, #B2A5F1, #DDDAFA, #8173C5, #93D0FA);/*  لون الخلفيه حقت اشهر مؤثرين نسق */
   padding: 50px 0;
   margin: 100px auto;
 }
