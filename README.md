@@ -29,7 +29,7 @@ The system uses a structured influencer dataset containing attributes such as ca
 ```bash
 git clone https://github.com/Nujud11/Align.git
 cd Align
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 python app.py
