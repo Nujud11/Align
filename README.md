@@ -30,7 +30,7 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 python app.py
-
+```
 
 ## Demo
 - Live demo was previously deployed on Heroku: https://align-by-wetaan-2dcd62ef9e5a.herokuapp.com
