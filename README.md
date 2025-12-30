@@ -1,15 +1,11 @@
-https://github.com/user-attachments/assets/a665616b-5526-45ff-82a4-f4958f965670
+# Align Overview
 
-# Align 
-AI-Driven Influencer Recommendation Platform
-
-## Overview
 Align is a data-driven platform designed to help companies identify and select the most suitable influencers for their marketing campaigns. The system focuses on improving brand–influencer alignment by analyzing multiple factors such as interests, audience relevance, location, and cost.
 
-The project was developed during an internship at Wetaan Company and awarded **Best Project MVP (1st place)**.
+The project MVP was developed during an internship at Wetaan Company.
 
 ## Key Features
-- AI-based influencer–brand matching logic
+- Data-based influencer–brand matching logic
 - Recommendation system based on alignment criteria
 - Functional MVP demonstrating the full workflow
 - Web interface for exploring recommendations
@@ -34,3 +30,10 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 python app.py
+
+
+## Demo
+- Live demo was previously deployed on Heroku: https://align-by-wetaan-2dcd62ef9e5a.herokuapp.com
+- Screen Recording:
+
+https://github.com/user-attachments/assets/a665616b-5526-45ff-82a4-f4958f965670
