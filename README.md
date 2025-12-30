@@ -1,3 +1,5 @@
+
+https://github.com/user-attachments/assets/4cfec80a-83f4-4d84-8e8b-f2a6dd15177f
 # Align 
 AI-Driven Influencer Recommendation Platform
 
@@ -21,9 +23,10 @@ The project was developed during an internship at Wetaan Company and awarded **B
 ## Dataset
 The system uses a structured influencer dataset containing attributes such as category, location, engagement indicators, and cost.
 
-## Status
+## Demo
 - Live demo was previously deployed on Heroku (free tier discontinued)
-- Project is preserved here for code review and evaluation
+- Screen Recocrding: https://github.com/user-attachments/assets/a665616b-5526-45ff-82a4-f4958f965670
+
 
 ## Run Locally
 ```bash
