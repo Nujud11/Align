@@ -1,5 +1,5 @@
+https://github.com/user-attachments/assets/a665616b-5526-45ff-82a4-f4958f965670
 
-https://github.com/user-attachments/assets/4cfec80a-83f4-4d84-8e8b-f2a6dd15177f
 # Align 
 AI-Driven Influencer Recommendation Platform
 
